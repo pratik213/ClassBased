@@ -1,0 +1,7 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'first.css' %}">
+
+<h1 class='head'>{{ object.title }}</h1>
+<p>{{ object.description }}</p>
+
+<a href="{% url 'BasedApp:home' %}"><button class="button-85">Home</button></a>

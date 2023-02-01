@@ -1,0 +1,7 @@
+{% load crispy_forms_tags %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% comment %} {{ form.as_p  }} {% endcomment %}
+    <input type="submit" value="save">
+</form>

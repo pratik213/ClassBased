@@ -1,0 +1,9 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'first.css' %}">
+<form method="post">
+    {% csrf_token %}
+    <p class="head">Are you sure you want to delete "{{ object }}"?</p>
+    <input class="button-85" type="submit" value="Confirm">
+    <a href="/"><button class="button-85">Cancel</button></a>
+</form>
+

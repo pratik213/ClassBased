@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'first.css' %}">
+
+
+<div class='container'>
+<p class='up'>To-Do list</p>
+<ul>
+    {% for object in object_list %}
+    <a href="{% url 'BasedApp:detail' object.pk %}"><li class='head'>{{ object.title }}</li></a>
+    <dl class='description'>{{ object.description }}</dl>
+    
+    <a href="{% url 'BasedApp:update' object.pk %}"><button class="button-85">Update</button></a>
+    <a href="{% url 'BasedApp:delete' object.pk %}"><button class="button-85">Delete</button></a>
+    <hr/>
+
+    {% empty %}
+    <li>No objects yet</li>
+    {% endfor %}
+
+    <a href="{% url 'BasedApp:create' %}"><button class="button-86">ADD</button</a>
+</ul>
+</div>
